@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A heartfelt interactive apology card with love coupons and sweet messages.">
+  <title>စိတ်မဆိုးပါနဲ့ 💕 I'm Sorry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== PAGE 1: APOLOGY INTRO ==================== -->
+  <section id="page1" class="page active">
+    <div class="hearts-container" id="heartsPage1"></div>
+    <div class="glass-card" id="mainCard">
+      <div class="card-sparkle"></div>
+      <p class="sorry-emoji">🥺</p>
+      <h1 id="apologyText" class="bounce-text">စိတ်မဆိုးပါနဲ့တော့နော်...</h1>
+      <p class="sub-text">Please forgive me... 💗</p>
+      <div class="button-container">
+        <button id="acceptBtn" class="btn btn-accept" aria-label="Accept apology">ပြေတယ် 💕</button>
+        <button id="rejectBtn" class="btn btn-reject" aria-label="Reject apology">မပြေဘူး 😤</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE 2: SUCCESS SCREEN ==================== -->
+  <section id="page2" class="page">
+    <div class="confetti-container" id="confettiContainer"></div>
+    <h1 class="neon-header" id="successHeader">Yayyy! ချစ်လိုက်တာ... 🥰</h1>
+    <div class="frames-wrapper">
+      <div class="polaroid-frame">
+        <div class="photo-area">
+          <span class="placeholder-icon"><img class="polaroid-photo1" src="photo1.jpg" alt=""></span>
+        </div>
+        <p class="polaroid-caption">i love you mama</p>
+      </div>
+      <div class="polaroid-frame">
+        <div class="photo-area">
+          <span class="placeholder-icon"><img class="polaroid-photo1" src="photo1.jpg" alt=""></span>
+        </div>
+        <p class="polaroid-caption">i love you mama</p>
+      </div>
+      
+    </div>
+
+    <!-- CSS + SVG Cat -->
+    <div class="cat-container" id="catContainer">
+      <div class="cat-bubble-zone" id="catBubbles"></div>
+      <svg class="cat-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- Tail -->
+        <path class="cat-tail-path" d="M145,170 Q175,150 165,120 Q158,100 168,85" 
+              fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+        <!-- Body -->
+        <ellipse cx="100" cy="170" rx="42" ry="35" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <!-- Head -->
+        <circle cx="100" cy="110" r="40" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <!-- Left Ear -->
+        <polygon points="68,82 58,42 88,70" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <polygon points="70,79 63,50 85,72" fill="#ffc2d1" opacity="0.6"/>
+        <!-- Right Ear -->
+        <polygon points="132,82 142,42 112,70" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <polygon points="130,79 137,50 115,72" fill="#ffc2d1" opacity="0.6"/>
+        <!-- Eyes -->
+        <g class="cat-eyes">
+          <circle cx="85" cy="105" r="6" fill="#444"/>
+          <circle cx="83" cy="103" r="2" fill="white"/>
+          <circle cx="115" cy="105" r="6" fill="#444"/>
+          <circle cx="113" cy="103" r="2" fill="white"/>
+        </g>
+        <!-- Eyelids for blinking -->
+        <g class="cat-eyelids">
+          <ellipse cx="85" cy="105" rx="8" ry="0" fill="white">
+            <animate attributeName="ry" values="0;8;0" dur="0.2s" begin="2s;5s;9s;14s" fill="freeze"/>
+          </ellipse>
+          <ellipse cx="115" cy="105" rx="8" ry="0" fill="white">
+            <animate attributeName="ry" values="0;8;0" dur="0.2s" begin="2s;5s;9s;14s" fill="freeze"/>
+          </ellipse>
+        </g>
+        <!-- Blush -->
+        <circle cx="73" cy="118" r="8" fill="#ffb6c1" opacity="0.35"/>
+        <circle cx="127" cy="118" r="8" fill="#ffb6c1" opacity="0.35"/>
+        <!-- Nose -->
+        <ellipse cx="100" cy="115" rx="4" ry="3" fill="#ffb6c1"/>
+        <!-- Mouth -->
+        <path d="M93,120 Q100,127 107,120" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Whiskers -->
+        <line x1="50" y1="108" x2="76" y2="113" stroke="#ddd" stroke-width="1.2"/>
+        <line x1="48" y1="116" x2="76" y2="117" stroke="#ddd" stroke-width="1.2"/>
+        <line x1="124" y1="113" x2="150" y2="108" stroke="#ddd" stroke-width="1.2"/>
+        <line x1="124" y1="117" x2="152" y2="116" stroke="#ddd" stroke-width="1.2"/>
+        <!-- Paws -->
+        <ellipse cx="78" cy="200" rx="16" ry="8" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <ellipse cx="122" cy="200" rx="16" ry="8" fill="white" stroke="#f0e0e5" stroke-width="1.5"/>
+        <!-- Paw details -->
+        <circle cx="72" cy="198" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+        <circle cx="78" cy="196" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+        <circle cx="84" cy="198" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+        <circle cx="116" cy="198" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+        <circle cx="122" cy="196" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+        <circle cx="128" cy="198" r="3" fill="#fde" stroke="#f0e0e5" stroke-width="0.5"/>
+      </svg>
+    </div>
+    <button class="btn btn-next" id="toPage3Btn">ဆက်ဖတ်မယ် →</button>
+  </section>
+
+  <!-- ==================== PAGE 3: LOVE LETTER ==================== -->
+  <section id="page3" class="page">
+    <div class="flower-container" id="flowerContainer"></div>
+    <div class="letter-card" id="letterCard">
+      <div class="letter-seal">💌</div>
+      <h2 class="letter-header">မောင်တောင်းပန်စာ</h2>
+      <div class="letter-divider">
+        <span>❦</span>
+      </div>
+      <div class="letter-body">
+        <p>For my love</p>
+        <p>မောင်မှားသွားတာကို ဝန်ခံတယ်။ မမကို မကြိုက်တာလုက်မိလိုခုလိုချော့တာပါမမ။ မမရဲ့ ခံစားချက်တွေကို မောင် တန်ဖိုးထားတယ်ဆိုတာ သိစေချင်ပါတယ်။</p>
+        <p>မမရဲ့ အပြုံးလေးက မောင့်ရဲ့ နေ့တိုင်းကို လင်းစေတယ်။ အဲ့ဒီ အပြုံးလေး ပျောက်သွားတိုင်း မောင့်ရင်ထဲမှာ အရမ်းနာတယ်။ နောက်ထပ် ဒီလိုမဖြစ်အောင် ကတိပေးတယ်။</p>
+        <p>မမက မောင့်ဘဝမှာ အကောင်းဆုံးအရာပဲ။ မမနဲ့ အတူတူ ဖြတ်သန်းရတဲ့ အချိန်တိုင်းဟာ မောင့်အတွက် အဖိုးတန်ဆုံးပဲ။ မမမရှိတဲ့ ဘဝကို စဉ်းစားတောင် မစဉ်းစားချင်ဘူး။</p>
+        <p>မောင် မမကို အရမ်းချစ်တယ်ဆိုတာ ယုံပေးနော်... ခွင့်လွှတ်ပေးနော်...</p>
+        <p class="letter-signature">ချစ်ခြင်းတွေ အပြည့်နဲ့ 💕<br><span class="signature-heart">— Mg</span></p>
+      </div>
+    </div>
+    <button class="btn btn-next" id="toPage4Btn">ဆက်ကြည့်မယ် →</button>
+  </section>
+
+  <!-- ==================== PAGE 4: LOVE COUPONS ==================== -->
+  <section id="page4" class="page">
+    <div class="hearts-container hearts-sparse" id="heartsPage4"></div>
+    <h1 class="coupon-main-header">Love Coupons 💝</h1>
+    <p class="coupon-subtitle">ချစ်ချစ်အတွက် အထူးကူပွန်များ</p>
+    <div class="coupon-tabs" id="couponTabs">
+      <button class="tab active" data-tab="punch" aria-label="Punch Coupon">🥊</button>
+      <button class="tab" data-tab="boba" aria-label="Boba Coupon">🧋</button>
+      <button class="tab" data-tab="kiss" aria-label="Kiss Coupon">💋</button>
+    </div>
+    <div class="coupon-stage" id="couponStage">
+      <!-- Coupon 1: Punch -->
+      <div class="coupon-ticket active" data-coupon="punch" id="couponPunch">
+        <div class="coupon-perf-left"></div>
+        <div class="coupon-perf-right"></div>
+        <div class="coupon-inner">
+          <div class="coupon-icon">🥊</div>
+          <h3 class="coupon-title">ရိုက်နှက်ခွင့်</h3>
+          <p class="coupon-desc">တစ်ခါရိုက်ခွင့်<br><span class="coupon-note">(မနာအောင်တော့ ရိုက်နော်!)</span></p>
+          <div class="coupon-divider-dashed"></div>
+          <p class="coupon-validity">⏰ Valid Forever</p>
+          <button class="btn btn-redeem" data-for="punch">Redeem ✨</button>
+        </div>
+        <div class="stamp-overlay" id="stampPunch">
+          <span>REDEEMED</span>
+        </div>
+      </div>
+
+      <!-- Coupon 2: Boba -->
+      <div class="coupon-ticket" data-coupon="boba" id="couponBoba">
+        <div class="coupon-perf-left"></div>
+        <div class="coupon-perf-right"></div>
+        <div class="coupon-inner">
+          <div class="coupon-icon">🧋</div>
+          <h3 class="coupon-title">ကိုယ်တိုင် လိုက်ကျွေးရမည့်</h3>
+          <p class="coupon-desc">အကြိုက်ဆုံး Bubble Tea တစ်ခွက်</p>
+          <div class="coupon-divider-dashed"></div>
+          <p class="coupon-validity">⏰ Valid Forever</p>
+          <button class="btn btn-redeem" data-for="boba">Redeem ✨</button>
+        </div>
+        <div class="stamp-overlay" id="stampBoba">
+          <span>REDEEMED</span>
+        </div>
+      </div>
+
+      <!-- Coupon 3: Kiss -->
+      <div class="coupon-ticket" data-coupon="kiss" id="couponKiss">
+        <div class="coupon-perf-left"></div>
+        <div class="coupon-perf-right"></div>
+        <div class="coupon-inner">
+          <div class="coupon-icon">💋</div>
+          <h3 class="coupon-title">အကန့်အသတ်မရှိ</h3>
+          <p class="coupon-desc">အနမ်းခံခွင့်</p>
+          <div class="coupon-divider-dashed"></div>
+          <p class="coupon-validity">⏰ Valid Forever & Ever</p>
+          <button class="btn btn-redeem" data-for="kiss">Redeem ✨</button>
+        </div>
+        <div class="stamp-overlay" id="stampKiss">
+          <span>REDEEMED</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
